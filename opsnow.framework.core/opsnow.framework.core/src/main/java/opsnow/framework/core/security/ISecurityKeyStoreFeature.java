@@ -1,4 +1,4 @@
-package opsnow.framework.core.features;
+package opsnow.framework.core.security;
 
 public interface ISecurityKeyStoreFeature
 {

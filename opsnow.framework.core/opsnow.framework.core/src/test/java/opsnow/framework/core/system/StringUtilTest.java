@@ -14,7 +14,7 @@ public class StringUtilTest {
 
         Boolean isMail = StringUtil.isEmail("hyunmin.park@opsnow");
 
-        System.out.println(isMail);
+        System.out.println("isMail : " + isMail);
 
         Assertions.assertThat(isMail).isEqualTo(false);
     }
