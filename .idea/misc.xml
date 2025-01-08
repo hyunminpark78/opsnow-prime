@@ -6,6 +6,7 @@
       <list>
         <option value="$PROJECT_DIR$/opsnow.framework.core/opsnow.framework.core/pom.xml" />
         <option value="$PROJECT_DIR$/opsnow.applcation.prime/pom.xml" />
+        <option value="$PROJECT_DIR$/opsnow.application/opsnow.application.prime/pom.xml" />
       </list>
     </option>
   </component>

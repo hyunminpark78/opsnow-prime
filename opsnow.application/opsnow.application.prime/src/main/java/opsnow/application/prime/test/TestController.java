@@ -1,4 +1,4 @@
-package opsnow.applcation.prime.test;
+package opsnow.application.prime.test;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,18 +15,16 @@ public class TestController {
     @PostMapping("/test2")
     public String test2(@RequestBody DefaultModel model) {
         //System.out.println("==================================");
-        model.excuteCore();
+        //model.excuteCore();
         return model.getAddress();
     }
 
     @PostMapping("/test3")
-    public String test3(@RequestBody ModelAction<DefaultModel> model) {
+    public String test3(@RequestBody ModelAction<DefaultModel> action) {
         //System.out.println("==================================");
         //model.executeCore();
 
-        ONIUtil.
-
-        model.executeCore();
-        return "test3";
+        action.executeCore();
+        return action.model.getName();
     }
 }

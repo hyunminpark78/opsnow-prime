@@ -1,7 +1,8 @@
-package opsnow.applcation.prime.test;
+package opsnow.application.prime.test;
 
+import opsnow.framework.core.system.DefaultFeature;
 
-public class DefaultModel {
+public class DefaultModel extends DefaultModelBase {
     private String name;
     private String address;
 
@@ -21,7 +22,4 @@ public class DefaultModel {
         this.address = address;
     }
 
-    public void excuteCore() {
-        System.out.println("Excute Core");
-    }
 }

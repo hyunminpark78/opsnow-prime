@@ -2,18 +2,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.4.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>opsnow.framework.core</groupId>
-    <artifactId>opsnow_framework_core</artifactId>
+    <groupId>opsnow.application.prime</groupId>
+    <artifactId>opsnow_application_prime</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>opsnow.framework.core</name>
-    <description>opsnow.framework.core</description>
+    <name>opsnow.application.prime</name>
+    <description>opsnow.application.prime</description>
     <url/>
     <licenses>
         <license/>
@@ -33,7 +32,7 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
         <dependency>
@@ -56,6 +55,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>opsnow.framework.core</groupId>
+            <artifactId>opsnow_framework_core</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
