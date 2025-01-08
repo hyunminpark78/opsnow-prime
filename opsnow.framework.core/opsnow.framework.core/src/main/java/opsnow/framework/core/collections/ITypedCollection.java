@@ -3,6 +3,11 @@ package opsnow.framework.core.collections;
 import java.util.Map;
 import java.util.function.Function;
 
+/**
+ * 1. Create Date: 2025-01-04
+ * 2. Creator: hyunmin.park@opsnow.com
+ * 3. Description:
+ */
 public interface ITypedCollection extends Iterable<Map.Entry<Class<?>, Object>> {
 
     /**

@@ -12,6 +12,11 @@ import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * 1. Create Date: 2025-01-04
+ * 2. Creator: hyunmin.park@opsnow.com
+ * 3. Description:
+ */
 public class ONIUtil {
     private static final char[] s_conv32map = {
             '1', '2', '3', '4', '5', '6', '7', '8', '9',

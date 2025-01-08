@@ -5,6 +5,11 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.function.Function;
 
+/**
+ * 1. Create Date: 2025-01-04
+ * 2. Creator: hyunmin.park@opsnow.com
+ * 3. Description:
+ */
 public class TypedCollection implements ITypedCollection {
     private final ConcurrentMap<Class<?>, Object> collection;
     private final ConcurrentMap<Class<?>, Function<Object, Void>> initializers;
