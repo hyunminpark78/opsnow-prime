@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/01 opsnow.framework.core/opsnow.framework.core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/02 opsnow.service/opsnow.service.common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/02 opsnow.service/opsnow.service.common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/02 opsnow.service/opsnow.service.common2/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/03 opsnow.application/opsnow.application.prime/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/opsnow.applcation.prime/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/opsnow.application/opsnow.application.prime/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/opsnow.framework.core/opsnow.framework.core/src/main/java" charset="UTF-8" />
   </component>
 </project>

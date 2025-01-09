@@ -7,7 +7,15 @@
         <option value="$PROJECT_DIR$/opsnow.framework.core/opsnow.framework.core/pom.xml" />
         <option value="$PROJECT_DIR$/opsnow.applcation.prime/pom.xml" />
         <option value="$PROJECT_DIR$/opsnow.application/opsnow.application.prime/pom.xml" />
+        <option value="$PROJECT_DIR$/opsnow.service/opsnow.service.common/pom.xml" />
+        <option value="$PROJECT_DIR$/opsnow.service.common/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/opsnow.applcation.prime/pom.xml" />
+        <option value="$PROJECT_DIR$/opsnow.service/opsnow.service.common/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="corretto-18" project-jdk-type="JavaSDK">
