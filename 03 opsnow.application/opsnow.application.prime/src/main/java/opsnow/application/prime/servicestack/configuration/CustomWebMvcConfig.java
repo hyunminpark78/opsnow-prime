@@ -1,6 +1,6 @@
-package opsnow.application.prime.configuration;
+package opsnow.application.prime.servicestack.configuration;
 
-import opsnow.application.prime.converter.CustomHttpMessageConverter;
+import opsnow.application.prime.servicestack.converter.CustomHttpMessageConverter;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;

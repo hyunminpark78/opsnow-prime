@@ -1,4 +1,4 @@
-package opsnow.application.prime.converter;
+package opsnow.application.prime.servicestack.converter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import opsnow.framework.core.system.AnnotationUtil;
