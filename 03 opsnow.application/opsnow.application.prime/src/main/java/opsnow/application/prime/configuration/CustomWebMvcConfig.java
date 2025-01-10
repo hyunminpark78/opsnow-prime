@@ -1,12 +1,17 @@
-package opsnow.service.common.httpServicestack.configuration;
+package opsnow.application.prime.configuration;
 
-import opsnow.service.common.httpServicestack.converter.CustomHttpMessageConverter;
+import opsnow.application.prime.converter.CustomHttpMessageConverter;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.List;
 
+/**
+ * 1. Create Date: 2025-01-04
+ * 2. Creator: hyunmin.park@opsnow.com
+ * 3. Description:
+ */
 @Configuration
 public class CustomWebMvcConfig implements WebMvcConfigurer {
 

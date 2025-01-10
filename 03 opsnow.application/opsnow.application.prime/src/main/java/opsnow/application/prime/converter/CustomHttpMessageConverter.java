@@ -1,4 +1,4 @@
-package opsnow.service.common.httpServicestack.converter;
+package opsnow.application.prime.converter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import opsnow.framework.core.system.AnnotationUtil;
@@ -16,6 +16,11 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * 1. Create Date: 2025-01-04
+ * 2. Creator: hyunmin.park@opsnow.com
+ * 3. Description:
+ */
 @Component
 public class CustomHttpMessageConverter implements HttpMessageConverter<ActionBase> {
 
