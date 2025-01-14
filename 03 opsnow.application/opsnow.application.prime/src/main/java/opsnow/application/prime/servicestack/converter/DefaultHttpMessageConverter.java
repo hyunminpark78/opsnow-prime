@@ -2,12 +2,13 @@ package opsnow.application.prime.servicestack.converter;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import jakarta.servlet.http.HttpServletRequest;
 import opsnow.framework.core.system.AnnotationUtil;
-import opsnow.framework.core.text.Encoder;
 import opsnow.service.common.httpServicestack.annotation.DefaultModelAnnotation;
 import opsnow.service.common.httpServicestack.command.HttpActionBase;
+import org.springframework.context.ApplicationContext;
+import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.http.HttpInputMessage;
 import org.springframework.http.HttpOutputMessage;
 import org.springframework.http.MediaType;
@@ -19,7 +20,6 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Map;
 
 /**
  * 1. Create Date: 2025-01-04
@@ -27,16 +27,16 @@ import java.util.Map;
  * 3. Description:
  */
 @Component
-public class CustomHttpMessageConverter implements HttpMessageConverter<HttpActionBase> {
+public class DefaultHttpMessageConverter implements HttpMessageConverter<HttpActionBase>, ApplicationContextAware {
 
     private HttpMessageConverter<Object> messageConverter = new MappingJackson2HttpMessageConverter();
 
     private final ObjectMapper objectMapper;
 
     @Autowired
-    private HttpServletRequest request;
+    private ApplicationContext applicationContext;
 
-    public CustomHttpMessageConverter(ObjectMapper objectMapper) {
+    public DefaultHttpMessageConverter(ObjectMapper objectMapper) {
         this.objectMapper = objectMapper;
         this.objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     }
@@ -62,11 +62,13 @@ public class CustomHttpMessageConverter implements HttpMessageConverter<HttpActi
     @Override
     public HttpActionBase read(Class<? extends HttpActionBase> clazz, HttpInputMessage inputMessage) throws IOException, HttpMessageNotReadableException {
         try {
-            HttpActionBase action = clazz.getDeclaredConstructor().newInstance();
+            //HttpActionBase action = clazz.getDeclaredConstructor().newInstance();
+            var action = applicationContext.getBean(clazz);
+
             if (action != null) {
                 DefaultModelAnnotation annotation = AnnotationUtil.getAnnotation(clazz, DefaultModelAnnotation.class);
                 Class<?> annotationClz = AnnotationUtil.getClassFromAnnotation(annotation);
-                action.initAction(messageConverter.read(annotationClz, inputMessage), request);
+                action.initAction(messageConverter.read(annotationClz, inputMessage));
             }
             return action;
         } catch (Exception e) {
@@ -77,5 +79,10 @@ public class CustomHttpMessageConverter implements HttpMessageConverter<HttpActi
     @Override
     public void write(HttpActionBase HttpActionBase, MediaType contentType, HttpOutputMessage outputMessage) throws IOException, HttpMessageNotWritableException {
 
+    }
+
+    @Override
+    public void setApplicationContext(org.springframework.context.ApplicationContext applicationContext) throws BeansException {
+        this.applicationContext = applicationContext;
     }
 }

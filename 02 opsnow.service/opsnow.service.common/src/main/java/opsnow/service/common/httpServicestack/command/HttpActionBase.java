@@ -17,21 +17,23 @@ import java.util.Map;
  * 2. Creator: hyunmin.park@opsnow.com
  * 3. Description:
  */
+@Component
 public abstract class HttpActionBase<TRequest, TResponse> extends ActionBase<TRequest, TResponse> {
 
-    protected TRequest model;
+    @Autowired
     private HttpServletRequest request;
+
+    protected TRequest model;
 
     private Map<String, String> queryMap;
 
-    public void initAction(TRequest model, HttpServletRequest request) {
+    public void initAction(TRequest model) {
         this.model = model;
-        this.request = request;
     }
 
     protected Map<String, String> getQueryMap() {
         if (queryMap == null) {
-            this.queryMap = Encoder.fromQueryString(request.getQueryString());
+            this.queryMap = Encoder.fromQueryString(this.request.getQueryString());
         }
         return queryMap;
     }
@@ -66,7 +68,7 @@ public abstract class HttpActionBase<TRequest, TResponse> extends ActionBase<TRe
 
         postExecute();
 
-        return apiResult;
+        return buildResult(apiResult);
     }
 
     private APIResult<TResponse> buildResult(APIResult<TResponse> result) {

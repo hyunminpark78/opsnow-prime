@@ -1,6 +1,8 @@
 package opsnow.application.prime.test;
 
+import jakarta.servlet.http.HttpServletRequest;
 import opsnow.service.common.httpServicestack.command.SampleAction;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class TestController {
+
     @GetMapping("/test")
     public String test() {
         return "test22";
@@ -20,11 +23,6 @@ public class TestController {
 
     @PostMapping("/test3")
     public Object test3(@RequestBody SampleAction action) {
-        //System.out.println("==================================");
-        //model.executeCore();
-
-        //action.executeCore();
         return action.executeCore();
-        //return "1234";
     }
 }
