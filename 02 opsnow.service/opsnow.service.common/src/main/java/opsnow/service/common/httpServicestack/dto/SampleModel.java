@@ -1,13 +1,6 @@
 package opsnow.service.common.httpServicestack.dto;
 
-import opsnow.service.common.httpServicestack.command.DefaultModelBase;
-
-/**
- * 1. Create Date: 2025-01-04
- * 2. Creator: hyunmin.park@opsnow.com
- * 3. Description:
- */
-public class DefaultModel extends DefaultModelBase {
+public class SampleModel extends HttpModel {
     private String name;
     private String address;
 
@@ -26,5 +19,4 @@ public class DefaultModel extends DefaultModelBase {
     public void setAddress(String address) {
         this.address = address;
     }
-
 }

@@ -1,7 +1,6 @@
 package opsnow.application.prime.test;
 
-import opsnow.service.common.httpServicestack.command.ModelAction;
-import opsnow.service.common.httpServicestack.dto.DefaultModel;
+import opsnow.service.common.httpServicestack.command.SampleAction;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,15 +18,8 @@ public class TestController {
         return "test22";
     }
 
-    @PostMapping("/test2")
-    public String test2(@RequestBody DefaultModel model) {
-        //System.out.println("==================================");
-        //model.excuteCore();
-        return model.getAddress();
-    }
-
     @PostMapping("/test3")
-    public Object test3(@RequestBody ModelAction action) {
+    public Object test3(@RequestBody SampleAction action) {
         //System.out.println("==================================");
         //model.executeCore();
 

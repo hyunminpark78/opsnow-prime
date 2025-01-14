@@ -10,18 +10,8 @@ import opsnow.service.common.httpServicestack.dto.APIResult;
  * @param <TResponse>
  */
 public abstract class CommandBase<TRequest, TResponse> {
-    protected  TRequest model;
-
-    public void setModel(TRequest model) {
-        this.model = model;
-    }
-
-    protected abstract void init();
-
-    protected abstract boolean preExecute();
-    protected abstract void postExecute();
 
     protected abstract TResponse execute();
 
-    protected abstract APIResult<TResponse> executeCore();
+
 }

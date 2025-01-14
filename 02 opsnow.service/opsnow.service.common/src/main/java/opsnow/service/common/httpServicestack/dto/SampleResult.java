@@ -5,7 +5,7 @@ package opsnow.service.common.httpServicestack.dto;
  * 2. Creator: hyunmin.park@opsnow.com
  * 3. Description:
  */
-public class DemoResult {
+public class SampleResult {
     private String message;
 
     public String getMessage() {

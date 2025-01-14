@@ -1,16 +1,16 @@
 package opsnow.service.common.httpServicestack.command;
 
 import opsnow.service.common.httpServicestack.annotation.DefaultModelAnnotation;
-import opsnow.service.common.httpServicestack.dto.DefaultModel;
-import opsnow.service.common.httpServicestack.dto.DemoResult;
+import opsnow.service.common.httpServicestack.dto.*;
+import opsnow.service.common.httpServicestack.dto.SampleResult;
 
 /**
  * 1. Create Date: 2025-01-04
  * 2. Creator: hyunmin.park@opsnow.com
  * 3. Description:
  */
-@DefaultModelAnnotation(defaultClass = DefaultModel.class)
-public class ModelAction extends ActionBase<DefaultModel, DemoResult> {
+@DefaultModelAnnotation(defaultClass = SampleModel.class)
+public class SampleAction extends HttpActionBase<SampleModel, SampleResult> {
     @Override
     protected void init() {
     }
@@ -24,11 +24,14 @@ public class ModelAction extends ActionBase<DefaultModel, DemoResult> {
     protected void postExecute() {}
 
     @Override
-    protected DemoResult execute() {
+    protected SampleResult execute() {
         String name = this.model.getName();
 
-        DemoResult result = new DemoResult();
+        SampleResult result = new SampleResult();
         result.setMessage(name);
+
+        String queryA = this.getQueryMap().get("a");
+
         return result;
     }
 }
